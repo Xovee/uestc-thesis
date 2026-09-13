@@ -33,7 +33,7 @@ python tests/run_regression.py --quick
 排版或构建相关变更发布前，应在TeX Live 2026运行完整回归，不要求维护旧版本兼容性。
 测试入口支持`--tex-bin`，且会保存工具路径、
 版本及加载宏包版本。具体命令与验收边界见
-[TeX Live兼容性记录](docs/texlive-2026-adaptation.md)。
+[维护说明](docs/maintenance.md)。
 
 ## 变更类型
 
