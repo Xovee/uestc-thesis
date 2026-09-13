@@ -3,9 +3,9 @@
 <p align="center">电子科技大学研究生学位论文 LaTeX 模板</p>
 
 <p align="center">
-  <a href="#下载模板"><img src="https://img.shields.io/badge/%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="下载模板" height="34"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE.md"><img src="https://img.shields.io/badge/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="使用指南" height="34"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/chinese.pdf"><img src="https://img.shields.io/badge/%E9%A2%84%E8%A7%88%20PDF-455A64?style=for-the-badge" alt="预览 PDF" height="34"></a>
+  <a href="#下载模板"><img src="https://img.shields.io/badge/Download-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="下载模板" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE.md"><img src="https://img.shields.io/badge/Guide-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="使用指南" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/chinese.pdf"><img src="https://img.shields.io/badge/PDF-455A64?style=for-the-badge" alt="预览 PDF" height="34"></a>
   <a href="#overleaf-在线写作"><img src="https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&amp;logo=overleaf&amp;logoColor=white" alt="Overleaf" height="34"></a>
 </p>
 
@@ -31,11 +31,11 @@
 
 ## 本地写作
 
-安装 **TeX Live 2026（macOS 使用 MacTeX 2026）、VS Code 和 LaTeX Workshop 扩展**，具体方法见[使用指南](GUIDE.md)。
+1. **安装环境**：TeX Live 2026（macOS 使用 MacTeX 2026）、VS Code 和 LaTeX Workshop 扩展。
+2. **打开模板**：解压语言包，用 VS Code 打开整个文件夹，在 `main.tex` 和 `chapters/` 中填写与写作。
+3. **编译预览**：使用 LaTeX Workshop 编译 `main.tex`，生成 `output/main.pdf`；之后保存修改即可自动编译。
 
-1. **打开模板**：解压下载包，用 VS Code 打开整个模板文件夹。
-2. **填写与写作**：在 `main.tex` 中选择硕士或博士，在 `chapters/` 中修改论文内容；图片放入 `figures/`，文献写入 `references.bib`。封面按学校 Word 模板填写并导出，替换 `cover.pdf`。
-3. **生成 PDF**：打开 `main.tex`，按 `F1` 执行 `LaTeX Workshop: Build LaTeX project`，再执行 `LaTeX Workshop: View LaTeX PDF file`。之后保存修改即可自动编译，输出为 `output/main.pdf`。
+安装、首次编译和封面设置的详细步骤见[使用指南](GUIDE.md)。
 
 已验证：**Windows · macOS · Overleaf**，均使用 TeX Live / MacTeX 2026 和 XeLaTeX。
 

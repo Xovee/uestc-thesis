@@ -4,8 +4,8 @@
 
 <p align="center">
   <a href="#download"><img src="https://img.shields.io/badge/Download-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Download" height="34"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE-english.md"><img src="https://img.shields.io/badge/User%20guide-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="User guide" height="34"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/english.pdf"><img src="https://img.shields.io/badge/Preview%20PDF-455A64?style=for-the-badge" alt="Preview PDF" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE-english.md"><img src="https://img.shields.io/badge/Guide-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="User guide" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/english.pdf"><img src="https://img.shields.io/badge/PDF-455A64?style=for-the-badge" alt="Preview PDF" height="34"></a>
   <a href="#write-on-overleaf"><img src="https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&amp;logo=overleaf&amp;logoColor=white" alt="Overleaf" height="34"></a>
 </p>
 
@@ -31,11 +31,11 @@ Each package has one `main.tex` entry file with the language and example chapter
 
 ## Write locally
 
-Install **TeX Live 2026 (MacTeX 2026 on macOS), VS Code and the LaTeX Workshop extension**; see the [user guide](GUIDE-english.md) for setup instructions.
+1. **Install the tools**: TeX Live 2026 (MacTeX 2026 on macOS), VS Code and the LaTeX Workshop extension.
+2. **Open the template**: extract your language package, open the entire folder in VS Code, and edit `main.tex` and `chapters/`.
+3. **Build and preview**: compile `main.tex` with LaTeX Workshop to generate `output/main.pdf`. Subsequent edits build automatically when saved.
 
-1. **Open the template**: extract the package and open the entire folder in VS Code.
-2. **Make it yours**: select `master` or `doctor` in `main.tex` and edit your thesis in `chapters/`. Put images in `figures/` and references in `references.bib`. Complete the school's Word cover template, export it to PDF and replace `cover.pdf`.
-3. **Build the PDF**: open `main.tex`, press `F1`, and run `LaTeX Workshop: Build LaTeX project`, then `LaTeX Workshop: View LaTeX PDF file`. Subsequent edits build automatically when saved. The output is `output/main.pdf`.
+See the [user guide](GUIDE-english.md) for installation, first-build instructions and cover setup.
 
 Verified on **Windows · macOS · Overleaf**, using TeX Live / MacTeX 2026 and XeLaTeX.
 
