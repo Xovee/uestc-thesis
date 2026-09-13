@@ -14,7 +14,7 @@
 %% The work consists of the files described in NOTICE.md.
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uestcthesis}[2025/02/09 v0.1 UESTC Thesis Class by Xovee Xu]
+\ProvidesClass{uestcthesis}[2026/09/13 v1.0.0 UESTC Thesis Class by Xovee Xu]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
