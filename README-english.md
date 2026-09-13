@@ -3,11 +3,7 @@
 <p align="center">LaTeX thesis template for the University of Electronic Science and Technology of China</p>
 <p align="center">Master’s theses · Doctoral dissertations &nbsp; / &nbsp; Chinese · English</p>
 
-<p align="center">
-  <img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-1756a9?style=flat-square">
-  <img alt="TeX Live 2026" src="https://img.shields.io/badge/TeX_Live-2026-526477?style=flat-square">
-  <img alt="XeLaTeX" src="https://img.shields.io/badge/engine-XeLaTeX-526477?style=flat-square">
-</p>
+<p align="center"><code>1.0.0</code> &nbsp; <code>TeX Live 2026</code> &nbsp; <code>XeLaTeX</code></p>
 
 [中文](README.md) · **English**
 
