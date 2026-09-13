@@ -12,7 +12,7 @@ A LaTeX template for master's theses and doctoral dissertations at the Universit
 
 - **Easy**: simple to use and quick to get started.
 - **Accurate**: follows UESTC requirements and closely matches the official template.
-- **Fast**: efficient compilation, tested with real, full-length theses.
+- **Fast**: efficient compilation, validated on multiple real theses and dissertations.
 - **Maintained**: ongoing updates informed by school requirements and user feedback.
 
 ## Download
