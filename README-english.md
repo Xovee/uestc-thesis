@@ -3,10 +3,10 @@
 <p align="center">LaTeX thesis template for the University of Electronic Science and Technology of China</p>
 
 <p align="center">
-  <a href="#download"><img src="https://img.shields.io/badge/Download-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Download"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE-english.md"><img src="https://img.shields.io/badge/User%20guide-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="User guide"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/english.pdf"><img src="https://img.shields.io/badge/Preview%20PDF-455A64?style=for-the-badge" alt="Preview PDF"></a>
-  <a href="#write-on-overleaf"><img src="https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&amp;logo=overleaf&amp;logoColor=white" alt="Overleaf"></a>
+  <a href="#download"><img src="https://img.shields.io/badge/Download-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Download" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE-english.md"><img src="https://img.shields.io/badge/User%20guide-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="User guide" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/english.pdf"><img src="https://img.shields.io/badge/Preview%20PDF-455A64?style=for-the-badge" alt="Preview PDF" height="34"></a>
+  <a href="#write-on-overleaf"><img src="https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&amp;logo=overleaf&amp;logoColor=white" alt="Overleaf" height="34"></a>
 </p>
 
 <p align="center"><a href="https://github.com/Xovee/uestc-thesis/blob/main/README.md">中文</a> · <strong>English</strong></p>
@@ -39,7 +39,7 @@ Install **TeX Live 2026 (MacTeX 2026 on macOS), VS Code and the LaTeX Workshop e
 
 Verified on **Windows · macOS · Overleaf**, using TeX Live / MacTeX 2026 and XeLaTeX.
 
-> This is an unofficial template. Check your final thesis against the [current UESTC requirements](https://gr.uestc.edu.cn/xiazai/114/3917).
+> Check your final thesis against the [current UESTC requirements](https://gr.uestc.edu.cn/xiazai/114/3917).
 
 ## Write on Overleaf
 

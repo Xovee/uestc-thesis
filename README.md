@@ -3,10 +3,10 @@
 <p align="center">电子科技大学研究生学位论文 LaTeX 模板</p>
 
 <p align="center">
-  <a href="#下载模板"><img src="https://img.shields.io/badge/%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="下载模板"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE.md"><img src="https://img.shields.io/badge/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="使用指南"></a>
-  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/chinese.pdf"><img src="https://img.shields.io/badge/%E9%A2%84%E8%A7%88%20PDF-455A64?style=for-the-badge" alt="预览 PDF"></a>
-  <a href="#overleaf-在线写作"><img src="https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&amp;logo=overleaf&amp;logoColor=white" alt="Overleaf"></a>
+  <a href="#下载模板"><img src="https://img.shields.io/badge/%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="下载模板" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE.md"><img src="https://img.shields.io/badge/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="使用指南" height="34"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/chinese.pdf"><img src="https://img.shields.io/badge/%E9%A2%84%E8%A7%88%20PDF-455A64?style=for-the-badge" alt="预览 PDF" height="34"></a>
+  <a href="#overleaf-在线写作"><img src="https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&amp;logo=overleaf&amp;logoColor=white" alt="Overleaf" height="34"></a>
 </p>
 
 <p align="center"><strong>中文</strong> · <a href="https://github.com/Xovee/uestc-thesis/blob/main/README-english.md">English</a></p>
@@ -39,7 +39,7 @@
 
 已验证：**Windows · macOS · Overleaf**，均使用 TeX Live / MacTeX 2026 和 XeLaTeX。
 
-> 本项目为非官方模板；提交前请按[学校最新要求](https://gr.uestc.edu.cn/xiazai/114/3917)检查论文。
+> 提交前请按[学校最新要求](https://gr.uestc.edu.cn/xiazai/114/3917)检查论文。
 
 ## Overleaf 在线写作
 
