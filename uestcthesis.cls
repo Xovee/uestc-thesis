@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设定
 
-% 加在一些必要的宏包
+% 加载基础文档类
 \LoadClass[12pt,twoside]{report} % 加载report文档类
 
 \RequirePackage[
@@ -59,14 +59,14 @@
 \RequirePackage[
     hidelinks,
     hyperfootnotes=false,
-]{hyperref}    % 网址支持
+]{hyperref}    % 超链接与PDF书签支持
 \RequirePackage[]{tocloft}              % 目录支持
 \RequirePackage{graphicx}               % 图片支持
-\RequirePackage{booktabs}               % 图片支持
+\RequirePackage{booktabs}               % 三线表横线支持
 \RequirePackage{tabularx}               % 自适应列宽的表格支持
-\RequirePackage{subcaption}             % 图片支持
-\RequirePackage{caption}                % Caption支持
-\RequirePackage{enumitem}               % 编号列表支持
+\RequirePackage{subcaption}             % 子图、子表及其标题支持
+\RequirePackage{caption}                % 图表标题格式
+\RequirePackage{enumitem}               % 有序、无序及描述列表格式
 % 一级列表沿用正文的字体与行距，首行缩进，续行回到正文左边界。
 \setlist[enumerate,1]{label=\arabic*.,wide=2em,topsep=0pt,partopsep=0pt,itemsep=0pt,parsep=0pt}
 \setlist[itemize,1]{label=\textbullet,wide=2em,topsep=0pt,partopsep=0pt,itemsep=0pt,parsep=0pt}
@@ -519,7 +519,7 @@
 }
 
 \renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}} % 增加章级别的leader
-\renewcommand{\cftchappagefont}{\normalfont} % 章页码字体变为正常字体，默认位粗体
+\renewcommand{\cftchappagefont}{\normalfont} % 章页码字体变为正常字体，默认为粗体
 \setlength\cftparskip{0pt} % 目录entries间距
 
 % 各目录测量页码，将最宽值写入aux供下一遍设置标题换行的安全右边距。
