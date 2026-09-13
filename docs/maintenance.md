@@ -51,9 +51,9 @@ python tools/package_release.py --source-only --language chinese
 python tools/package_release.py --source-only --language english
 ```
 
-输出到`dist/`，文件名以`-source-preview.zip`结尾，旁置检查记录；不含示例PDF，也不能凭该记录确认正式发布。当前本地发布草稿使用这两份源码包和独立示例PDF，尚未完成正式候选确认流程。
+输出到`dist/`，文件名以`-source-preview.zip`结尾，旁置检查记录；不含示例PDF，也不能凭该记录确认正式发布。正式发布使用经过确认的候选包，并旁置中英文示例PDF。
 
-正式候选要求中文指南已完成内容审阅和首次使用验证，且`GUIDE.md`中唯一状态标记为`<!-- guide-status: ready -->`。当前指南没有此标记，正式打包会拒绝；不得只为绕过检查而设置状态。英文指南须同步审阅。
+正式候选要求中文指南已完成内容审阅和首次使用验证，且`GUIDE.md`中唯一状态标记为`<!-- guide-status: ready -->`。1.0.0的中英文指南已完成审阅并设置此标记。后续内容改动仍须复核，不得只为绕过检查而设置状态。英文指南须同步审阅。
 
 ```text
 python tools/package_release.py --language chinese

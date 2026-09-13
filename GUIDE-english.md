@@ -1,3 +1,5 @@
+<!-- guide-status: ready -->
+
 # UESTC Thesis User Guide
 
 This guide explains how to use UESTC Thesis and introduces some LaTeX basics. If anything is unclear, you can ask your preferred AI assistant.

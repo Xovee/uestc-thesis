@@ -20,11 +20,11 @@
 
 ## Download
 
-**1.0.0 is being refined and has not been released yet.** Once published, choose the ZIP for your thesis language on the [download page](https://github.com/Xovee/uestc-thesis/releases).
+**Current version: 1.0.0.** Download the template for your thesis language, or read the [release notes](https://github.com/Xovee/uestc-thesis/releases/tag/v1.0.0).
 
 | English thesis | 中文论文 |
 | :---: | :---: |
-| `uestc-thesis-xovee-english.zip` | `uestc-thesis-xovee-chinese.zip` |
+| [uestc-thesis-xovee-english.zip](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.0/uestc-thesis-xovee-english.zip) | [uestc-thesis-xovee-chinese.zip](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.0/uestc-thesis-xovee-chinese.zip) |
 | [Sample PDF](docs/previews/english.pdf) · [User guide](GUIDE-english.md) | [查看示例 PDF](docs/previews/chinese.pdf) · [阅读指南](GUIDE.md) |
 
 Each package has one `main.tex` entry file with the language and example chapters configured. Both include Chinese and English abstracts.
@@ -49,7 +49,9 @@ Edit and compile in [Overleaf](https://www.overleaf.com/) without installing sof
 2. In project settings, select **XeLaTeX**, **TeX Live 2026**, and `main.tex` as the main document.
 3. Click **Recompile** and check the example before editing your thesis.
 
-See the [user guide](GUIDE-english.md) for full instructions. One-click import links for both languages will be enabled when public release attachments are available. Long theses may exceed the compile timeout on the free plan.
+Import directly: [English template](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.0%2Fuestc-thesis-xovee-english.zip) · [中文模板](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.0%2Fuestc-thesis-xovee-chinese.zip). Check the compiler settings above after importing.
+
+See the [user guide](GUIDE-english.md) for full instructions. Long theses may exceed the compile timeout on the free plan.
 
 ## Feedback and contributions
 

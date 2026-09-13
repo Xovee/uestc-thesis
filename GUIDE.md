@@ -1,3 +1,5 @@
+<!-- guide-status: ready -->
+
 # UESTC Thesis 使用手册
 
 本手册介绍UESTC Thesis的使用方法，包括一些LaTeX的基础知识。有什么不清楚不明白的，可以先问问你所使用的大模型。

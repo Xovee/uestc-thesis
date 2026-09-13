@@ -20,11 +20,11 @@
 
 ## 下载模板
 
-**1.0.0 正在完善，尚未正式发布。** 发布后在[下载页面](https://github.com/Xovee/uestc-thesis/releases)选择对应语言的 ZIP。
+**当前版本：1.0.0。** 按论文语言下载模板，或查看[发布说明](https://github.com/Xovee/uestc-thesis/releases/tag/v1.0.0)。
 
 | 中文论文 | English thesis |
 | :---: | :---: |
-| `uestc-thesis-xovee-chinese.zip` | `uestc-thesis-xovee-english.zip` |
+| [uestc-thesis-xovee-chinese.zip](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.0/uestc-thesis-xovee-chinese.zip) | [uestc-thesis-xovee-english.zip](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.0/uestc-thesis-xovee-english.zip) |
 | [查看示例 PDF](docs/previews/chinese.pdf) · [阅读指南](GUIDE.md) | [Sample PDF](docs/previews/english.pdf) · [User guide](GUIDE-english.md) |
 
 每个包只有一个 `main.tex` 入口，正文示例和语言已配好，同时保留中英文摘要。
@@ -49,7 +49,9 @@
 2. 在项目设置中选择 **XeLaTeX**、**TeX Live 2026**，主文件为 `main.tex`。
 3. 点击 **Recompile**，确认示例生成后开始修改论文。
 
-完整操作见[使用指南](GUIDE.md)。中英文一键导入入口将在公开的发布附件可用后启用。长篇论文可能超过免费计划的编译时限。
+也可一键导入：[中文模板](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.0%2Fuestc-thesis-xovee-chinese.zip) · [English template](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.0%2Fuestc-thesis-xovee-english.zip)。导入后仍需确认上述编译设置。
+
+完整操作见[使用指南](GUIDE.md)。长篇论文可能超过免费计划的编译时限。
 
 ## 反馈与贡献
 
