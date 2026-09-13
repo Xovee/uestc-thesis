@@ -1,19 +1,22 @@
 <h1 align="center">UESTC Thesis</h1>
 
 <p align="center">LaTeX thesis template for the University of Electronic Science and Technology of China</p>
-<p align="center">Master’s theses · Doctoral dissertations &nbsp; / &nbsp; Chinese · English</p>
 
-<p align="center"><code>1.0.0</code> &nbsp; <code>TeX Live 2026</code> &nbsp; <code>XeLaTeX</code></p>
+<p align="center">
+  <a href="#download"><img src="https://img.shields.io/badge/Download-2563EB?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Download"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/GUIDE-english.md"><img src="https://img.shields.io/badge/User%20guide-455A64?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="User guide"></a>
+  <a href="https://github.com/Xovee/uestc-thesis/blob/main/docs/previews/english.pdf"><img src="https://img.shields.io/badge/Preview%20PDF-455A64?style=for-the-badge" alt="Preview PDF"></a>
+  <a href="#write-on-overleaf"><img src="https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&amp;logo=overleaf&amp;logoColor=white" alt="Overleaf"></a>
+</p>
 
-[中文](README.md) · **English**
-
-[Download](#download) · [Write on Overleaf](#write-on-overleaf) · [Preview PDF](docs/previews/english.pdf) · [User guide](GUIDE-english.md)
-
-| Easy | Accurate | Fast | Maintained |
-| :---: | :---: | :---: | :---: |
-| Simple to use and quick to get started. | Follows UESTC requirements and closely matches the official template. | Efficient compilation, validated on multiple real theses and dissertations. | Ongoing updates informed by school requirements and user feedback. |
+<p align="center"><a href="https://github.com/Xovee/uestc-thesis/blob/main/README.md">中文</a> · <strong>English</strong></p>
 
 ![Template preview: cover, main text and references](docs/previews/english.png)
+
+- **Easy**: simple to use and quick to get started.
+- **Accurate**: follows UESTC requirements and closely matches the official template.
+- **Fast**: efficient compilation, validated on multiple real theses and dissertations.
+- **Maintained**: ongoing updates informed by school requirements and user feedback.
 
 ## Download
 
@@ -26,16 +29,6 @@
 
 Each package has one `main.tex` entry file with the language and example chapters configured. Both include Chinese and English abstracts.
 
-## Write on Overleaf
-
-Edit and compile in [Overleaf](https://www.overleaf.com/) without installing software:
-
-1. Choose **New Project → Upload Project** and upload the Chinese or English template ZIP. No extraction is needed.
-2. In project settings, select **XeLaTeX**, **TeX Live 2026**, and `main.tex` as the main document.
-3. Click **Recompile** and check the example before editing your thesis.
-
-See the [user guide](GUIDE-english.md) for full instructions. One-click import links for both languages will be enabled when public release attachments are available. Long theses may exceed the compile timeout on the free plan.
-
 ## Write locally
 
 Install **TeX Live 2026 (MacTeX 2026 on macOS), VS Code and the LaTeX Workshop extension**; see the [user guide](GUIDE-english.md) for setup instructions.
@@ -47,6 +40,16 @@ Install **TeX Live 2026 (MacTeX 2026 on macOS), VS Code and the LaTeX Workshop e
 Verified on **Windows · macOS · Overleaf**, using TeX Live / MacTeX 2026 and XeLaTeX.
 
 > This is an unofficial template. Check your final thesis against the [current UESTC requirements](https://gr.uestc.edu.cn/xiazai/114/3917).
+
+## Write on Overleaf
+
+Edit and compile in [Overleaf](https://www.overleaf.com/) without installing software:
+
+1. Choose **New Project → Upload Project** and upload the Chinese or English template ZIP. No extraction is needed.
+2. In project settings, select **XeLaTeX**, **TeX Live 2026**, and `main.tex` as the main document.
+3. Click **Recompile** and check the example before editing your thesis.
+
+See the [user guide](GUIDE-english.md) for full instructions. One-click import links for both languages will be enabled when public release attachments are available. Long theses may exceed the compile timeout on the free plan.
 
 ## Feedback and contributions
 
