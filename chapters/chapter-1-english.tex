@@ -1,0 +1,130 @@
+% Use \chapter, \section, and \subsection to organize the body text.
+\chapter{Template Usage Example}
+
+This document briefly introduces the main features of the template. For more detailed instructions,
+see the Markdown user guide, \mbox{\texttt{GUIDE.md}}, in the project directory.
+
+\section{Document Configuration}
+
+Edit \texttt{main.tex} to set the degree type, title, author information, and other options:
+
+\begin{itemize}
+    \item Degree type: use \texttt{master} for a master's thesis and \texttt{doctor} for a doctoral dissertation;
+    \item Thesis language: download the Chinese or English package; each package uses \texttt{main.tex}.
+\end{itemize}
+
+Import the cover, Chinese and English title pages, and declaration page as follows:
+
+\begin{enumerate}
+    \item Download the appropriate Word template:
+        \href{https://gr.uestc.edu.cn/xiazai/114/3917}{https://gr.uestc.edu.cn/xiazai/114/3917}
+    \item Enter the thesis information;
+    \item Export the cover and Chinese and English title pages as \texttt{cover.pdf}, then replace the file
+        of the same name in the project. To replace the declaration of originality and authorization page,
+        scan the signed page as \texttt{declaration.pdf} and replace the corresponding project file.
+\end{enumerate}
+
+\section{Thesis Structure}
+
+A dissertation/thesis consists of preliminary pages, the main text, and final pages. Their components
+and order are shown in \autoref{tab:thesis-structure}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Basic Structure of a Degree Dissertation/Thesis}
+    \label{tab:thesis-structure}
+    \begin{tabularx}{\linewidth}{c>{\raggedright\arraybackslash}Xc>{\raggedright\arraybackslash}X}
+          \toprule
+          Component & \multicolumn{1}{c}{Contents} & Component & \multicolumn{1}{c}{Contents} \\
+          \midrule
+          \multirow{7}{*}{Preliminary Pages}
+              & 1. Cover Page
+              & \multirow{3}{*}{Main Text}
+              & 1. Introduction (Chapter 1) \\
+              & 2. Chinese and English Title Page
+              &
+              & 2. Body of Dissertation/Thesis \\
+              & 3. Statement and Authorization
+              &
+              & 3. Conclusion (last Chapter) \\
+          \cmidrule(lr){3-4}
+              & 4. Abstract in Chinese and English
+              & \multirow{4}{*}{Final Pages}
+              & 1. Acknowledgements \\
+              & 5. Contents
+              &
+              & 2. References \\
+              & 6. Figures and tables (if necessary)
+              &
+              & 3. Appendix (if necessary) \\
+              & 7. Symbols, Acronyms, etc. (if necessary)
+              &
+              & 4. Research Results \\
+          \bottomrule
+    \end{tabularx}
+    \tabnote{Note: Components marked ``if necessary'' may be included according to the thesis and disciplinary
+        conventions. To omit a component, comment out its input command in \texttt{main.tex}. For example,
+        omit the list of symbols with \texttt{\%\textbackslash input\{chapters/symbols\}}.}
+\end{table}
+
+\section{Second-Level Heading}
+
+\subsection{Third-Level Heading}
+
+\subsubsection{Fourth-Level Heading}
+
+Regular text, \textbf{bold text}, \textit{italic text}, and \underline{underlined text}.
+
+\section{Mathematical Expressions}
+
+\phantomsection
+\label{sym:math-symbols}
+Let the constant $\pi$ and scalar $\theta$ satisfy $\theta=\pi/2$. A vector $\mathbf{x}$ is transformed
+by a matrix $\mathbf{A}$ into a vector $\mathbf{y}$, as shown in \eqref{eq:matrix-vector-product}.
+\begin{samepage}
+\begin{equation}
+    \mathbf{y}=\mathbf{A}\mathbf{x}.
+    \label{eq:matrix-vector-product}
+\end{equation}
+\noindent Here, $\mathbf{y}$ is the output vector, $\mathbf{A}$ is the transformation matrix, and $\mathbf{x}$ is the input vector.
+\par\end{samepage}
+
+\section{Theorems and Proofs}
+
+\begin{definition}
+A matrix $\mathbf{A}$ is orthogonal if $\mathbf{A}^{\mathsf{T}}\mathbf{A}=\mathbf{I}$.
+\end{definition}
+
+\begin{theorem}
+An orthogonal matrix preserves the Euclidean norm of a vector.
+\end{theorem}
+
+\begin{proof}
+Since $\mathbf{A}^{\mathsf{T}}\mathbf{A}=\mathbf{I}$,
+$\lVert\mathbf{A}\mathbf{x}\rVert_2^2
+=\mathbf{x}^{\mathsf{T}}\mathbf{A}^{\mathsf{T}}\mathbf{A}\mathbf{x}
+=\mathbf{x}^{\mathsf{T}}\mathbf{x}
+=\lVert\mathbf{x}\rVert_2^2$.
+\end{proof}
+
+\section{Figures}
+
+\autoref{fig:uestc-logo} shows the UESTC visual identity.\footnote{When a cross-reference to a figure,
+table, or theorem is followed by text, retain a normal space after the command, for example between
+\texttt{\textbackslash autoref\{fig:uestc-logo\}} and ``shows.'' Omit the space before punctuation.}
+
+% Use the figure environment for images. Place caption below the image and label after caption.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/uestc-logo.png}
+    \caption{UESTC Visual Identity}
+    \label{fig:uestc-logo}
+    \fignote{Note: This sentence demonstrates the figure-note style.}
+\end{figure}
+
+\section{Citations and Cross-References}
+
+\autoref{tab:thesis-structure} demonstrates the three-line table and table-note styles.
+Common source types include journal articles~\cite{lecun2015deep}, international conference papers
+\cite{vaswani2017attention}, books~\cite{lamport1994latex}, and arXiv preprints
+\cite{kingma2014adam}.

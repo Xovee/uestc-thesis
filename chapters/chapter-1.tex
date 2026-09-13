@@ -1,0 +1,128 @@
+% 使用\chapter、\section和\subsection组织正文层次。
+\chapter{模板使用示例}
+
+本文档仅简要介绍模板的主要功能，更为详细的使用说明请参见目录中的
+\mbox{\texttt{GUIDE.md}}文件（Markdown使用手册）。
+
+\section{文档配置}
+
+编辑\texttt{main.tex}文件，可以设置学位类型、标题和作者信息等：
+
+\begin{itemize}
+    \item 学位类型：硕士论文使用\texttt{master}，博士论文使用\texttt{doctor}；
+    \item 论文语言：按需要下载中文包或英文包，每个包都使用\texttt{main.tex}。
+\end{itemize}
+
+封面、中英文扉页和声明页按以下步骤导入：
+
+\begin{enumerate}
+    \item 下载与本人学位类型对应的Word模板：\href{https://gr.uestc.edu.cn/xiazai/114/3917}{https://gr.uestc.edu.cn/xiazai/114/3917}
+    \item 填写本人的学位论文信息；
+    \item 将封面及中英文扉页的Word文档导出为\texttt{cover.pdf}，然后覆盖项目中的同名文件。
+        如需替换“独创性声明和论文使用授权”页，可将签署后的页面扫描为\texttt{declaration.pdf}，
+        覆盖项目中的同名文件。
+\end{enumerate}
+
+\section{学位论文结构}
+
+学位论文包括前置部分、主体部分和结尾部分，各部分组成及顺序见\autoref{tab:thesis-structure}。
+
+\begin{table}[htbp]
+    \centering
+    \caption{学位论文基本结构}
+    \label{tab:thesis-structure}
+    \begin{tabular}{@{}clcl@{}}
+          \toprule
+          组成部分 & \multicolumn{1}{c}{具体内容} & 组成部分 & \multicolumn{1}{c}{具体内容} \\
+          \midrule
+          \multirow{7}{*}{前置部分}
+              & 1. 封面
+              & \multirow{3}{*}{主体部分}
+              & 1. 绪论（第一章） \\
+              & 2. 中、英文扉页
+              &
+              & 2. 正文（中间各章） \\
+              & 3. 独创性声明和论文使用授权
+              &
+              & 3. 结论（最后一章） \\
+          \cmidrule(lr){3-4}
+              & 4. 中、英文摘要
+              & \multirow{4}{*}{结尾部分}
+              & 1. 致谢 \\
+              & 5. 目录
+              &
+              & 2. 参考文献 \\
+              & 6. 图、表目录（必要时）
+              &
+              & 3. 附录（必要时） \\
+              & 7. 符号、缩略词等注释表（必要时）
+              &
+              & 4. 攻读学位期间取得的成果 \\
+          \bottomrule
+    \end{tabular}
+    \tabnote{注：标注“必要时”的内容可按实际情况和学科惯例选用；不需要某项内容时，
+        可在\texttt{main.tex}中注释对应的导入命令。例如，主要符号表可注释为：
+        \texttt{\%\textbackslash input\{chapters/symbols\}}。}
+\end{table}
+
+\section{二级标题}
+
+\subsection{三级标题}
+
+\subsubsection{四级标题}
+
+正体、\textbf{粗体}、\textit{斜体}和\underline{下划线}。
+
+\section{数学公式}
+
+\phantomsection
+\label{sym:math-symbols}
+设常量$\pi$和标量$\theta$满足$\theta=\pi/2$。向量$\mathbf{x}$经矩阵$\mathbf{A}$变换后
+得到向量$\mathbf{y}$，见式\eqref{eq:matrix-vector-product}。
+\begin{equation}
+    \mathbf{y}=\mathbf{A}\mathbf{x}.
+    \label{eq:matrix-vector-product}
+\end{equation}
+\noindent 式中，$\mathbf{y}$为输出向量；$\mathbf{A}$为变换矩阵；$\mathbf{x}$为输入向量。
+
+\section{定理与证明}
+
+\begin{definition}
+若矩阵$\mathbf{A}$满足$\mathbf{A}^{\mathsf{T}}\mathbf{A}=\mathbf{I}$，
+则称$\mathbf{A}$为正交矩阵。
+\end{definition}
+
+\begin{theorem}
+正交矩阵保持向量的二范数不变。
+\end{theorem}
+
+\begin{proof}
+由$\mathbf{A}^{\mathsf{T}}\mathbf{A}=\mathbf{I}$可得
+$\lVert\mathbf{A}\mathbf{x}\rVert_2^2
+=\mathbf{x}^{\mathsf{T}}\mathbf{A}^{\mathsf{T}}\mathbf{A}\mathbf{x}
+=\mathbf{x}^{\mathsf{T}}\mathbf{x}
+=\lVert\mathbf{x}\rVert_2^2$。
+\end{proof}
+
+\section{图片}
+
+\autoref{fig:uestc-logo} 展示了电子科技大学校标组合\footnote{图、表和定理等以数字结尾的
+交叉引用后紧接中文文字时，应在命令后保留一个普通空格，例如在
+\texttt{\textbackslash autoref\{fig:uestc-logo\}} 与“展示了”之间保留空格；
+若后接标点符号，则不加空格。}。
+
+% figure环境用于插入图片；caption应位于图片下方，label通常紧随caption。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/uestc-logo.png}
+    \caption{电子科技大学校标组合}
+    \label{fig:uestc-logo}
+    \fignote{注：图的附注样式展示。}
+\end{figure}
+
+\section{文献引用与交叉引用}
+
+\autoref{tab:thesis-structure} 展示了三线表及表格附注的基本样式。
+常见文献类型包括英文期刊论文\cite{lecun2015deep}、国际会议论文
+\cite{vaswani2017attention}、专著\cite{lamport1994latex}、arXiv预印本
+\cite{kingma2014adam}和中文期刊论文\cite{zhang2020third}。

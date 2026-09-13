@@ -1,0 +1,24 @@
+\uestcsymbols
+
+% 每项依次填写符号、说明和符号在正文中首次出现的页码。
+% 推荐使用\pageref引用正文中的标签，使页码能够自动更新。
+% 多个符号在正文同一位置首次出现时，可以引用同一个标签。
+% 以下符号只用于演示常见写法；请删除论文中未实际使用的条目。
+% 内容较多时，可以手动拆分表格或自行改用支持跨页的表格环境。
+\begingroup
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{9pt}
+\noindent
+\begin{tabularx}{\linewidth}{%
+    >{\normalsize}l
+    >{\normalsize\raggedright\arraybackslash}X
+    >{\normalsize}c}
+    \textbf{符号} & \textbf{说明} & \textbf{页码} \\
+    $\pi$ & 圆周率 & \pageref{sym:math-symbols} \\
+    $\theta$ & 旋转角 & \pageref{sym:math-symbols} \\
+    $\mathbf{x}$ & 输入向量 & \pageref{sym:math-symbols} \\
+    $\mathbf{y}$ & 输出向量 & \pageref{sym:math-symbols} \\
+    $\mathbf{A}$ & 变换矩阵 & \pageref{sym:math-symbols} \\
+\end{tabularx}
+\par
+\endgroup

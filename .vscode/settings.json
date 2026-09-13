@@ -1,0 +1,26 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (xelatex)",
+            "tools": ["uestc-latexmk"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "uestc-latexmk",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "cwd": "%DIR%"
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+    "latex-workshop.latex.build.enableMagicComments": false,
+    "latex-workshop.latex.outDir": "%DIR%/output",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.tab.editorGroup": "right"
+}

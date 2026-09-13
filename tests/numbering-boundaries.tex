@@ -1,0 +1,66 @@
+% Maintainer-only numbering boundary test. This file is not included in user releases.
+\documentclass[tocdepth3]{uestcthesis}
+
+\providecommand{\BoundaryChapterTenTitle}{多位编号与目录页码边界测试}
+\providecommand{\BoundarySectionTitle}{两位节号边界测试}
+\providecommand{\BoundarySubsectionTitle}{两位子节号边界测试}
+\providecommand{\BoundarySubsubsectionTitle}{两位四级标题编号边界测试}
+\providecommand{\BoundaryBodyText}{正文用于检查第10章、第10节及三位页码下的标题、页眉和目录对齐。}
+\providecommand{\BoundaryFigureTitle}{多位图编号边界测试}
+\providecommand{\BoundaryTableTitle}{多位表编号边界测试}
+\providecommand{\BoundaryItem}{项目}
+\providecommand{\BoundaryValue}{数值}
+\providecommand{\BoundaryExample}{示例}
+\providecommand{\BoundaryChapterElevenTitle}{三位目录页码边界测试}
+\providecommand{\BoundaryFinalText}{正文用于确认目录中的三位页码不会挤压引导点或越过右边界。}
+
+\begin{document}
+
+\uestcfrontmatter
+\uestctableofcontents
+
+\uestcmainmatter
+% 从接近常见边界的计数值开始，避免生成大量无意义页面。
+\setcounter{page}{99}
+\setcounter{chapter}{9}
+\chapter{\BoundaryChapterTenTitle}
+
+\setcounter{section}{9}
+\section{\BoundarySectionTitle}
+\setcounter{subsection}{9}
+\subsection{\BoundarySubsectionTitle}
+\setcounter{subsubsection}{9}
+\subsubsection{\BoundarySubsubsectionTitle}
+
+\BoundaryBodyText
+
+\setcounter{equation}{9}
+\begin{equation}
+    a^2+b^2=c^2.
+\end{equation}
+
+\setcounter{figure}{9}
+\begin{figure}[htbp]
+    \centering
+    \rule{6cm}{2cm}
+    \caption{\BoundaryFigureTitle}
+\end{figure}
+
+\setcounter{table}{9}
+\begin{table}[htbp]
+    \centering
+    \caption{\BoundaryTableTitle}
+    \begin{tabular}{lc}
+        \toprule
+        \BoundaryItem & \BoundaryValue \\
+        \midrule
+        \BoundaryExample & 10 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\clearpage
+\chapter{\BoundaryChapterElevenTitle}
+\BoundaryFinalText
+
+\end{document}

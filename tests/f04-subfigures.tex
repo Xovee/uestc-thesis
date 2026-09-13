@@ -1,0 +1,71 @@
+% Actual guide example plus font, reference, and float-boundary controls.
+\ifdefined\FFourEnglish\PassOptionsToClass{english}{uestcthesis}\fi
+\documentclass{uestcthesis}
+\newcommand{\FFourText}[2]{\ifdefined\FFourEnglish#2\else#1\fi}
+\begin{document}
+\uestcmainmatter
+\chapter{\FFourText{子图格式核验}{Subfigure format checks}}
+\noindent BodyBefore 普通正文与单图对照。 Ordinary figure and body controls.\par
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{figures/uestc-logo.png}
+    \caption{\FFourText{普通单图对照}{Ordinary figure control}}
+    \label{f04:ordinary}
+\end{figure}
+\noindent BodyAfter 普通单图后的正文。 Text after an ordinary figure.
+
+\clearpage
+\section{\FFourText{手册原样例}{The actual guide example}}
+% This Chinese block is extracted verbatim from GUIDE.md, even in English mode.
+% It is a maintainer fixture, not an English thesis submission example.
+\noindent GuideIntro \autoref{fig:guide-pair}；
+\autoref{fig:guide-pair}(\subref{fig:guide-left})；
+\autoref{fig:guide-pair}(\subref{fig:guide-right})。\par
+\input{f04-guide-example.tex}
+\noindent GuideAfter 普通正文继续。 The body font is restored after subfigures.
+\par\noindent GuideRefs \ref{fig:guide-pair}; \subref{fig:guide-left}; \subref{fig:guide-right}.
+
+\clearpage
+\section{\FFourText{分页边界与长图题}{A page boundary and a long caption}}
+\noindent BoundaryBefore \FFourText{下页图题较长，整图及三个子图应一起排版。}{The next figure has a long caption and three panels.}
+\par\vspace*{0.72\textheight}
+\noindent BoundaryBottom \autoref{f04:long}(\subref{f04:long-left})；
+\autoref{f04:long}(\subref{f04:long-middle})；
+\autoref{f04:long}(\subref{f04:long-right})。
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{.3\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/uestc-logo.png}
+        \ifdefined\FFourLegacyCaptions
+            \caption{\FFourText{左侧子图展示初始观测结果，比较不同条件下的结构和特征。}{Left panel shows the initial observations, comparing structures and features under different conditions.}}
+        \else\caption{}\fi
+        \label{f04:long-left}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{.3\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/uestc-logo.png}
+        \ifdefined\FFourLegacyCaptions
+            \caption{\FFourText{中间子图展示调整后的观测结果，记录主要特征以及变化方向。}{Middle panel shows the adjusted observations, recording the main features and the direction of change.}}
+        \else\caption{}\fi
+        \label{f04:long-middle}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{.3\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/uestc-logo.png}
+        \ifdefined\FFourLegacyCaptions
+            \caption{\FFourText{右侧子图展示最终观测结果，用于复核说明文字的顺序及自然换行。}{Right panel shows the final observations, checking the order of the descriptions and their natural wrapping.}}
+        \else\caption{}\fi
+        \label{f04:long-right}
+    \end{subfigure}
+    \ifdefined\FFourLegacyCaptions
+        \caption{\FFourText{长分图题与分页测试}{Long panel descriptions and pagination}}
+    \else
+        \caption[\FFourText{长分图题与分页测试}{Long panel descriptions and pagination}]{\FFourText{长分图题与分页测试：(a)左侧子图展示初始观测结果，比较不同条件下的结构和特征；(b)中间子图展示调整后的观测结果，记录主要特征以及变化方向；(c)右侧子图展示最终观测结果，用于复核说明文字的顺序及自然换行。}{Long panel descriptions and pagination: (a) Left panel shows the initial observations, comparing structures and features under different conditions; (b) Middle panel shows the adjusted observations, recording the main features and the direction of change; (c) Right panel shows the final observations, checking the order of the descriptions and their natural wrapping.}}
+    \fi
+    \label{f04:long}
+\end{figure}
+\clearpage
+\uestclistoffigures
+\end{document}

@@ -1,0 +1,121 @@
+% Maintainer-only smoke test. This file is not included in user releases.
+\documentclass[tocdepth3]{uestcthesis}
+
+\begin{document}
+
+\uestcfrontmatter
+
+\zhabstract
+中文摘要回归测试。
+% 此处故意不留空行，用于验证关键词命令会自行另起一段。
+\keywords{模板；测试}
+
+\enabstract
+English abstract regression test.
+% Deliberately omit the blank line to verify that the command starts a paragraph.
+\enkeywords{Template; Test}
+
+\uestctableofcontents
+\uestclistoffigures
+\uestclistoftables
+\uestcsymbols
+\begingroup
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{9pt}
+\noindent
+\begin{tabularx}{\linewidth}{l>{\raggedright\arraybackslash}Xc}
+    \textbf{符号} & \textbf{说明} & \textbf{页码} \\
+    $a$ & 用于检查主要符号表的示例符号 & 1 \\
+\end{tabularx}
+\endgroup
+\uestcacronyms
+\begingroup
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{9pt}
+\noindent
+\begin{tabularx}{\linewidth}{%
+    l
+    >{\hsize=1.2\hsize\linewidth=\hsize\raggedright\arraybackslash}X
+    >{\hsize=0.8\hsize\linewidth=\hsize\raggedright\arraybackslash}X}
+    \textbf{英文缩写} & \textbf{英文全称} & \textbf{中文全称} \\
+    UESTC & University of Electronic Science and Technology of China & 电子科技大学 \\
+\end{tabularx}
+\endgroup
+
+\uestcmainmatter
+
+\chapter{排版回归测试}
+\section{标题与正文}
+\subsection{三级标题}
+\subsubsection{四级标题}
+
+正文、脚注\footnote{脚注回归测试。}、文献引用\cite{lamport1994latex}与公式：
+\begin{equation}
+    a^2+b^2=c^2.
+\end{equation}
+
+\begin{definition}定义环境回归测试。\end{definition}
+\begin{theorem}定理环境回归测试。\end{theorem}
+\begin{lemma}引理环境回归测试。\end{lemma}
+\begin{proposition}命题环境回归测试。\end{proposition}
+\begin{corollary}推论环境回归测试。\end{corollary}
+\begin{assumption}假设环境回归测试。\end{assumption}
+\begin{remark}注环境回归测试。\end{remark}
+\begin{proof}证明环境及证毕符号回归测试。\end{proof}
+
+\begin{algorithm}[htbp]
+    \caption{算法环境回归测试}
+    \label{alg:chinese-smoke}
+    \begin{algorithmic}[1]
+        \Require 正整数$a$和$b$
+        \Ensure $\gcd(a,b)$
+        \State \Return $a$
+    \end{algorithmic}
+\end{algorithm}
+\autoref{alg:chinese-smoke} 用于检查算法名称和编号。
+
+\begin{figure}[htbp]
+    \centering
+    \rule{8cm}{3cm}
+    \caption{图片标题回归测试：用于检查较长标题在限定宽度内换行后的居中、行距和末行位置}
+    \fignote{注：这是一段用于版式回归测试的较长图片附注。附注需要在正文宽度内自然换行，除最后一行外各行应当保持两端对齐，最后一行自然结束；同时还需要检查附注与图片标题、后续正文之间的垂直距离是否稳定。}
+\end{figure}
+
+图片后的正文用于检查浮动体与正文间距。
+
+% 将两个长附注分开观察，避免测试页因同时容纳两个浮动体而人为过满。
+\clearpage
+
+\begin{table}[htbp]
+    \centering
+    \caption{表格标题回归测试：用于检查较长标题在限定宽度内换行后的居中、行距和末行位置}
+    \begin{tabular}{lc}
+        \toprule
+        项目 & 数值 \\
+        \midrule
+        示例 & 1 \\
+        \bottomrule
+    \end{tabular}
+    \tabnote{注：这是一段用于版式回归测试的较长表格附注。附注需要在正文宽度内自然换行，除最后一行外各行应当保持两端对齐，最后一行自然结束；同时还需要检查附注与表格主体、后续章节之间的垂直距离是否稳定。}
+\end{table}
+
+\uestcacknowledgements
+致谢回归测试。
+
+\uestcprintbibliography
+
+\uestcappendix
+\chapter{附录回归测试}
+附录正文。
+\begin{theorem}附录定理编号回归测试。\end{theorem}
+\begin{algorithm}[htbp]
+    \caption{附录算法编号回归测试}
+    \begin{algorithmic}
+        \State \Return $0$
+    \end{algorithmic}
+\end{algorithm}
+
+\uestcachievements
+成果列表回归测试。
+
+\end{document}

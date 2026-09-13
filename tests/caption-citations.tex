@@ -1,0 +1,43 @@
+% Maintainer regression: front-matter citations must not lead body order.
+% CaptionTestEnglish repeats the same document in English; no class patches.
+\ifdefined\CaptionTestEnglish
+    \PassOptionsToClass{english}{uestcthesis}
+\fi
+\documentclass{uestcthesis}
+
+\begin{document}
+\uestcfrontmatter
+\uestctableofcontents
+\uestclistoffigures
+\uestclistoftables
+
+\uestcmainmatter
+\chapter{Caption citation order}
+\noindent BODYFIRST\cite{lecun2015deep}.
+
+% The table deliberately precedes the figure in the body, unlike LoF/LoT order.
+\begin{table}[H]
+    \centering
+    \caption{TABLESOURCE\cite{vaswani2017attention}}
+    \label{tab:caption-citation-test}
+    \begin{tabular}{cc}
+        \toprule
+        A & B \\
+        \midrule
+        1 & 2 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\noindent BODYMIDDLE\citep{kingma2014adam}.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\rule{0pt}{1cm}\rule{3cm}{0pt}}
+    \caption{FIGURESOURCE\cite{lamport1994latex}}
+    \label{fig:caption-citation-test}
+\end{figure}
+
+\noindent BODYLAST\cite{zhang2020third}.
+\uestcprintbibliography
+\end{document}

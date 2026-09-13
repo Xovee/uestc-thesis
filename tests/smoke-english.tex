@@ -1,0 +1,126 @@
+% Maintainer-only English-thesis regression test.
+\documentclass[english,tocdepth3]{uestcthesis}
+
+\begin{document}
+
+\uestcfrontmatter
+
+\zhabstract
+中文摘要回归测试。
+% 此处故意不留空行，用于验证关键词命令会自行另起一段。
+\keywords{模板；英文论文；测试}
+
+\enabstract
+English abstract regression test.
+% Deliberately omit the blank line to verify that the command starts a paragraph.
+\enkeywords{Template; English Thesis; Test}
+
+\uestctableofcontents
+\uestclistoffigures
+\uestclistoftables
+\uestcsymbols
+\begingroup
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{9pt}
+\noindent
+\begin{tabularx}{\linewidth}{l>{\raggedright\arraybackslash}Xc}
+    \textbf{Symbol} & \textbf{Description} & \textbf{Page} \\
+    $a$ & Example symbol for the list of symbols regression test & 1 \\
+\end{tabularx}
+\endgroup
+\uestcacronyms
+\begingroup
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{9pt}
+\noindent
+\begin{tabularx}{\linewidth}{l>{\raggedright\arraybackslash}X}
+    \textbf{Abbreviation} & \textbf{Full Name} \\
+    UESTC & University of Electronic Science and Technology of China \\
+\end{tabularx}
+\endgroup
+
+\uestcmainmatter
+
+\chapter{Typesetting Regression Test}
+\section{Headings and Body Text}
+\subsection{Third-Level Heading}
+\subsubsection{Fourth-Level Heading}
+
+Body text, a footnote\footnote{Footnote regression test.}, a citation
+\cite{lamport1994latex}, and an equation are tested below:
+\begin{equation}
+    a^2+b^2=c^2.
+    \label{eq:english-smoke}
+\end{equation}
+\autoref{eq:english-smoke} verifies the English cross-reference name.
+
+\begin{definition}Definition environment regression test.\end{definition}
+\begin{theorem}Theorem environment regression test.\end{theorem}
+\begin{lemma}Lemma environment regression test.\end{lemma}
+\begin{proposition}Proposition environment regression test.\end{proposition}
+\begin{corollary}Corollary environment regression test.\end{corollary}
+\begin{assumption}Assumption environment regression test.\end{assumption}
+\begin{remark}Remark environment regression test.\end{remark}
+\begin{proof}Proof environment and end-of-proof symbol regression test.\end{proof}
+
+\begin{algorithm}[htbp]
+    \caption{Algorithm Environment Regression Test}
+    \label{alg:english-smoke}
+    \begin{algorithmic}[1]
+        \Require Positive integers $a$ and $b$
+        \Ensure $\gcd(a,b)$
+        \State \Return $a$
+    \end{algorithmic}
+\end{algorithm}
+\autoref{alg:english-smoke} verifies the algorithm name and numbering.
+
+\begin{figure}[htbp]
+    \centering
+    \rule{8cm}{3cm}
+    \caption{Figure Caption Regression Test for Wrapping, Alignment, Line Spacing, and the Position of the Final Line}
+    \label{fig:english-smoke}
+    \fignote{Note: This deliberately long figure note is used for visual regression testing. It must wrap naturally within the text width, remain fully justified on every complete line, end its final line naturally, and retain stable vertical spacing from the figure caption and the following body text.}
+\end{figure}
+
+\autoref{fig:english-smoke} verifies the figure name.
+
+% Inspect the two long notes on separate pages so the stress fixture itself
+% does not overfill a page by placing both floats beside a footnote.
+\clearpage
+
+\begin{table}[htbp]
+    \centering
+    \caption{Table Caption Regression Test for Wrapping, Alignment, Line Spacing, and the Position of the Final Line}
+    \label{tab:english-smoke}
+    \begin{tabular}{lc}
+        \toprule
+        Item & Value \\
+        \midrule
+        Example & 1 \\
+        \bottomrule
+    \end{tabular}
+    \tabnote{Note: This deliberately long table note is used for visual regression testing. It must wrap naturally within the text width, remain fully justified on every complete line, end its final line naturally, and retain stable vertical spacing from the table body and the section that follows.}
+\end{table}
+
+\autoref{tab:english-smoke} verifies the table name.
+
+\uestcacknowledgements
+Acknowledgements regression test.
+
+\uestcprintbibliography
+
+\uestcappendix
+\chapter{Regression Appendix}
+Appendix body text.
+\begin{theorem}Appendix theorem numbering regression test.\end{theorem}
+\begin{algorithm}[htbp]
+    \caption{Appendix Algorithm Numbering Regression Test}
+    \begin{algorithmic}
+        \State \Return $0$
+    \end{algorithmic}
+\end{algorithm}
+
+\uestcachievements
+Research results regression test.
+
+\end{document}

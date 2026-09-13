@@ -1,0 +1,120 @@
+% F02: appendix text, headings, displays and the following achievements page.
+\ifdefined\FTwoEnglish\PassOptionsToClass{english}{uestcthesis}\fi
+\ifdefined\FTwoDoctor\PassOptionsToClass{doctor}{uestcthesis}\fi
+\documentclass{uestcthesis}
+\newcommand{\FTwoText}[2]{\ifdefined\FTwoEnglish#2\else#1\fi}
+\makeatletter
+\newcommand{\FTwoFont}[1]{%
+  \typeout{F02FONT|#1|\f@size|\strip@pt\baselineskip|\strip@pt\parindent}%
+}
+\makeatother
+
+\begin{document}
+\uestcmainmatter
+\chapter{\FTwoText{正文对照}{Main body control}}
+\FTwoFont{main-body}
+\FTwoText{正文对照段落用于确认附录之外的字号保持不变。正文使用小四号，附录中的普通文字应使用五号。两部分仍然采用相同的固定行距。}
+{The main body control confirms that text outside the appendices keeps its original size. Ordinary appendix text uses a smaller font while retaining the same fixed line spacing.}
+\begin{equation}
+  \FTwoFont{main-equation}\mathrm{MainControl}=a+b.
+  \label{eq:f02-main}
+\end{equation}
+
+\uestcappendix
+\chapter{\FTwoText{附录正文与标题}{Appendix text and headings}}
+\FTwoFont{appendix-a}
+\FTwoText{附录正文甲用于检查五号文字及首行缩进。本段补充实验条件和分析过程，说明研究结果的适用范围。改变字号后，文字可以自然换行，各行之间仍保持固定的二十磅行距。}
+{Appendix body A checks the smaller text and first-line indentation. This paragraph describes experimental conditions and the scope of the analysis. The text can wrap naturally after the font-size change, while the line spacing remains fixed at twenty points.}
+
+\section{\FTwoText{附录的二级标题}{Second-level appendix heading}}
+\FTwoFont{after-section}
+\FTwoText{节后正文继续采用附录字号，标题与正文的字号分别控制。}
+{Text after a section keeps the appendix font size. Headings and ordinary text use separate size settings.}
+\subsection{\FTwoText{附录的三级标题}{Third-level appendix heading}}
+\FTwoFont{after-subsection}
+\subsubsection{\FTwoText{附录的四级标题}{Fourth-level appendix heading}}
+\FTwoFont{after-subsubsection}
+\FTwoText{四级标题后的正文仍使用五号。脚注也应保持自身的字号规则。}
+{Text after the fourth-level heading still uses the appendix font size. Footnotes retain their own size setting.}
+\footnote{\FTwoFont{appendix-footnote}\FTwoText{附录脚注保持小五号。}{The appendix footnote keeps its original size.}}
+
+\begin{theorem}
+  \FTwoFont{appendix-theorem}
+  \FTwoText{附录定理正文采用五号，编号仍然按附录字母编排。}
+  {Appendix theorem text uses the smaller font, and its number retains the appendix letter.}
+  \label{thm:f02}
+\end{theorem}
+\begin{proof}
+  \FTwoFont{appendix-proof}
+  \FTwoText{证明文字继承附录字号，并保留原来的证毕符号。}
+  {The proof inherits the appendix text size and keeps its original end-of-proof symbol.}
+\end{proof}
+\FTwoText{附录中的陈列公式及其编号仍使用小四号：}
+{Displayed mathematics and its equation number retain the main formula size:}
+\begin{equation}
+  \FTwoFont{appendix-equation}\mathrm{AppendixControl}=a^2+b^2.
+  \label{eq:f02-appendix}
+\end{equation}
+\FTwoFont{after-equation}
+\FTwoText{公式后正文自动恢复五号，不会沿用公式的字号。}
+{Text after the equation automatically returns to the appendix font size.}
+
+\chapter{\FTwoText{连续附录与图表}{Another appendix with figures and tables}}
+\FTwoFont{appendix-b}
+\FTwoText{附录正文乙用于检查第二个附录仍然使用五号。图题、表题和表内文字继续采用各自的格式设置。}
+{Appendix body B confirms that a second appendix still uses the smaller text. Figure captions, table captions and table cells keep their own formatting.}
+\begin{figure}[H]
+  \centering\fbox{\rule{0pt}{2cm}\rule{5cm}{0pt}}
+  \caption{\FTwoText{附录图题检查}{Appendix figure caption}}
+  \label{fig:f02}
+\end{figure}
+\FTwoFont{after-figure}
+\begin{table}[H]
+  \centering
+  \caption{\FTwoText{附录表题检查}{Appendix table caption}}
+  \label{tab:f02}
+  \begin{tabular}{cc}
+    \toprule
+    \FTwoText{参数}{Parameter} & \FTwoText{取值}{Value} \\
+    \midrule
+    Alpha & 1 \\
+    Beta & 2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FTwoFont{after-table}
+\FTwoText{表后正文保持五号。引用示例：}{Text after the table keeps the appendix font size. References:}
+\autoref{eq:f02-main}; \autoref{eq:f02-appendix}; \autoref{thm:f02};
+\autoref{fig:f02}; \autoref{tab:f02}.
+
+\clearpage
+\section{\FTwoText{陈列公式环境检查}{Display environment checks}}
+\begin{equation*}\FTwoFont{equation-star}\mathrm{EquationStar}=1.\end{equation*}
+\begin{align}\FTwoFont{align}\mathrm{AlignControl}&=2.\end{align}
+\begin{align*}\FTwoFont{align-star}\mathrm{AlignStar}&=3.\end{align*}
+\begin{alignat}{2}\FTwoFont{alignat}\mathrm{AlignatControl}&=4.\end{alignat}
+\begin{alignat*}{2}\FTwoFont{alignat-star}\mathrm{AlignatStar}&=5.\end{alignat*}
+\begin{flalign}\FTwoFont{flalign}&&\mathrm{FlalignControl}=6.&&\end{flalign}
+\begin{flalign*}\FTwoFont{flalign-star}&&\mathrm{FlalignStar}=7.&&\end{flalign*}
+\begin{gather}\FTwoFont{gather}\mathrm{GatherControl}=8.\end{gather}
+\begin{gather*}\FTwoFont{gather-star}\mathrm{GatherStar}=9.\end{gather*}
+\begin{multline}\FTwoFont{multline}\mathrm{MultlineControl}=a+b+c+d\\=10.\end{multline}
+\begin{multline*}\FTwoFont{multline-star}\mathrm{MultlineStar}=a+b+c+d\\=11.\end{multline*}
+\begin{displaymath}\FTwoFont{displaymath}\mathrm{DisplayControl}=12.\end{displaymath}
+\[\FTwoFont{bracket-display}\mathrm{BracketControl}=13.\]
+\FTwoFont{after-all-displays}
+\FTwoText{所有公式之后的正文仍应保持五号。}{Text after all display environments keeps the appendix font size.}
+% Intentionally no blank paragraph before the next part: the command must end it.
+\uestcachievements
+\FTwoFont{achievements-body}
+\FTwoText{成果页对照段落使用原来的默认字号，验证附录字号不会影响后面的独立部分。实际成果列表仍可按模板示例单独使用五号。}
+{The achievements control paragraph uses the original default font size. This verifies that appendix formatting does not leak into the following part. The actual achievement list can still select the smaller font independently.}
+{\small
+\begin{enumerate}[label={[\arabic*]},leftmargin=2.5em,itemsep=0pt]
+  \item \FTwoFont{achievements-list}\FTwoText{成果列表对照条目使用五号。}{The achievement list control uses the smaller font.}
+\end{enumerate}
+}
+\FTwoFont{after-achievements-list}
+\FTwoText{列表后的正文保持成果页原来的默认字号。}{Text after the list keeps the original default size for this page.}
+\begin{equation}\FTwoFont{achievements-equation}\mathrm{FinalControl}=x+y.\end{equation}
+\end{document}

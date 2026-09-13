@@ -1,0 +1,43 @@
+% Maintainer test: citation semantics, bibliography fields, and list geometry.
+\documentclass{uestcthesis}
+\begin{document}
+\uestcmainmatter
+\chapter{Bibliography regression}
+\noindent SINGLE\cite{cn-book}.
+\par\noindent RANGE\cite{cn-standard,cn-journal,en-journal}.
+\par\noindent MIXED\cite{cn-book,cn-journal,en-conference}.
+\par\noindent INLINE\citep{en-conference,en-book}.
+\par\noindent REVERSE\cite{en-journal,cn-journal,cn-standard}.
+\par\noindent AFTER\cite{cn-book}.
+\par\noindent NOTES\citep[see][12]{cn-book}.
+\par\noindent STAR\citep*{cn-book}.
+\par
+
+% A text citation must have the same height/width/depth as ordinary [1].
+% A following cite must still be superscript, proving the mode switch is local.
+\makeatletter
+\@ifundefined{b@cn-book}{}{%
+  \sbox0{\citep{cn-book}}\sbox2{[1]}%
+  \ifdim\ht0=\ht2\else\errmessage{Inline citation is not on the text baseline}\fi
+  \ifdim\dp0=\dp2\else\errmessage{Inline citation depth changed}\fi
+  \ifdim\wd0=\wd2\else\errmessage{Inline citation spacing changed}\fi
+  \sbox0{\cite{cn-book}}\sbox2{[1]}%
+  \ifdim\ht0>\ht2\else\errmessage{Default citation is not superscript}\fi
+}
+\let\testbibitem\bibitem
+\RenewDocumentCommand\bibitem{o m}{%
+  \ifnum\interlinepenalty=10000\else\errmessage{Reference may split across pages}\fi
+  \ifdim\f@size pt=10.5pt\else\errmessage{Wrong bibliography font size}\fi
+  \dimen0=\labelwidth\advance\dimen0 by\labelsep
+  \ifdim\leftmargin=\dimen0\else\errmessage{Bibliography labels are misaligned}\fi
+  \ifdim\labelsep=.5em\else\errmessage{Wrong bibliography label gap}\fi
+  \IfNoValueTF{#1}{\testbibitem{#2}}{\testbibitem[#1]{#2}}%
+}
+\edef\testpenalty{\the\interlinepenalty}
+\makeatother
+\nocite{*}
+\uestcprintbibliography[tests/bibliography-types]
+\ifnum\interlinepenalty=\testpenalty\else
+  \errmessage{Bibliography pagination setting leaked into body text}
+\fi
+\end{document}

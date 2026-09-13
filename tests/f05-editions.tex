@@ -1,0 +1,8 @@
+% Synthetic edition boundary checks in both thesis language modes.
+\ifdefined\FFiveEnglish\PassOptionsToClass{english}{uestcthesis}\fi
+\documentclass{uestcthesis}
+\begin{document}
+\uestcmainmatter
+\nocite{*}
+\uestcprintbibliography[tests/f05-editions]
+\end{document}

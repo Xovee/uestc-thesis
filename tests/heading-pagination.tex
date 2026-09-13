@@ -1,0 +1,43 @@
+% Maintainer-only heading and pagination test. This file is not included in user releases.
+\documentclass[tocdepth3]{uestcthesis}
+
+\providecommand{\HeadingLongChapter}{长章标题在正文、奇数页页眉和目录中的换行与边界测试}
+\providecommand{\HeadingLevelTwo}{连续标题间距测试}
+\providecommand{\HeadingLevelThree}{标题之间没有正文时的三级标题}
+\providecommand{\HeadingLevelFour}{标题之间没有正文时的四级标题}
+\providecommand{\HeadingBody}{正文用于检查连续标题之后的段后距离和正文起始位置。}
+\providecommand{\HeadingNearBottom}{临近页底的标题不得孤立}
+\providecommand{\HeadingNearBottomBody}{这段正文必须与标题一起出现在下一页，不能只把标题留在前一页底部。}
+
+\begin{document}
+
+\uestcfrontmatter
+\uestctableofcontents
+
+\uestcmainmatter
+\chapter{\HeadingLongChapter}
+\section{\HeadingLevelTwo}
+\subsection{\HeadingLevelThree}
+\subsubsection{\HeadingLevelFour}
+\HeadingBody
+
+\clearpage
+\vspace*{\dimexpr\textheight-48pt\relax}
+\section{\HeadingNearBottom}\label{sec:near-bottom}
+\HeadingNearBottomBody
+
+% 先输出标签所在页；首次编译标签尚未定义时交由latexmk继续重编译。
+\clearpage
+\makeatletter
+\@ifundefined{r@sec:near-bottom}{}{%
+    \ifnum\getpagerefnumber{sec:near-bottom}=3\relax
+        \typeout{UESTC-ASSERT heading-near-bottom: PASS}%
+    \else
+        \PackageError{uestcthesis-test}
+            {页底标题没有与后续正文一起移动到第3页}
+            {请检查标题分页控制机制。}%
+    \fi
+}
+\makeatother
+
+\end{document}

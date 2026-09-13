@@ -1,0 +1,59 @@
+% Maintainer-only English cross-reference regression test.
+\documentclass[english]{uestcthesis}
+
+\begin{document}
+\uestcfrontmatter
+\uestctableofcontents
+\uestcmainmatter
+
+\chapter{Cross-reference Targets}\label{xref:en:chapter}
+\section{Second-level Heading}\label{xref:en:section}
+\subsection{Third-level Heading}\label{xref:en:subsection}
+\subsubsection{Fourth-level Heading}\label{xref:en:subsubsection}
+
+\begin{definition}\label{xref:en:definition}
+Definition environment cross-reference test.
+\end{definition}
+\begin{theorem}\label{xref:en:theorem}
+Theorem environment cross-reference test.
+\end{theorem}
+\begin{lemma}\label{xref:en:lemma}
+Lemma environment cross-reference test.
+\end{lemma}
+\begin{proposition}\label{xref:en:proposition}
+Proposition environment cross-reference test.
+\end{proposition}
+\begin{corollary}\label{xref:en:corollary}
+Corollary environment cross-reference test.
+\end{corollary}
+\begin{assumption}\label{xref:en:assumption}
+Assumption environment cross-reference test.
+\end{assumption}
+\begin{remark}\label{xref:en:remark}
+Remark environment cross-reference test.
+\end{remark}
+
+\clearpage
+\section{Reference Results}
+
+Heading references: \autoref{xref:en:chapter}, \autoref{xref:en:section},
+\autoref{xref:en:subsection}, and \autoref{xref:en:subsubsection}.
+
+Theorem-family references: \autoref{xref:en:definition}, \autoref{xref:en:theorem},
+\autoref{xref:en:lemma}, \autoref{xref:en:proposition}, \autoref{xref:en:corollary},
+\autoref{xref:en:assumption}, and \autoref{xref:en:remark}.
+
+Page reference: page~\pageref{xref:en:section}.
+
+\uestcappendix
+\chapter{Appendix Reference Target}\label{xref:en:appendix}
+
+Appendix reference: \autoref{xref:en:appendix}.
+
+\begin{definition}\label{xref:en:appendix-definition}
+Appendix definition cross-reference test.
+\end{definition}
+
+Appendix theorem-family reference: \autoref{xref:en:appendix-definition}.
+
+\end{document}

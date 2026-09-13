@@ -1,0 +1,49 @@
+% Maintainer-only layout measurements; no edition-specific page count is assumed.
+\documentclass{uestcthesis}
+% Check the effective skips when the display actually starts, after font
+% selection and package hooks have run, rather than inspecting class source.
+\AtBeginEnvironment{equation}{%
+    \ifdim\abovedisplayskip=6pt\else\PackageError{layout-contract}{Wrong display above-skip}{}\fi
+    \ifdim\belowdisplayskip=6pt\else\PackageError{layout-contract}{Wrong display below-skip}{}\fi
+    \ifdim\abovedisplayshortskip=6pt\else\PackageError{layout-contract}{Wrong short display above-skip}{}\fi
+    \ifdim\belowdisplayshortskip=6pt\else\PackageError{layout-contract}{Wrong short display below-skip}{}\fi
+    \typeout{UESTC-DISPLAY-SKIPS: PASS}%
+}
+\begin{document}
+\uestcmainmatter
+\chapter{版式约定检查}
+
+\noindent BaselineA 中文正文第一行。\\
+BaselineB 中文正文第二行。\\
+BaselineC 中文正文第三行。
+
+IndentProbe 首行缩进的正文。
+
+\noindent NoIndentProbe 不缩进的对照正文。
+
+\noindent LatinAuto \quad\mbox{中A文}
+
+\noindent LatinSpace \quad\mbox{中 A 文}
+
+\noindent NumberAuto \quad\mbox{中1文}
+
+\noindent NumberSpace \quad\mbox{中 1 文}
+
+\noindent MathAuto \quad 中$x$文
+
+\noindent MathSpace \quad 中 $x$ 文
+
+\noindent BeforeDisplay 公式居中且编号靠右。
+\begin{equation}
+    a=b
+\end{equation}
+\noindent AfterDisplay 正文恢复固定行距。
+
+\noindent AfterBaseline 下一行正文。
+
+\section{二级标题}
+\subsection{三级标题}
+\subsubsection{四级标题}
+\noindent HeadingBody 连续标题后的正文。
+
+\end{document}

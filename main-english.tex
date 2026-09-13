@@ -1,0 +1,46 @@
+% !TeX program = xelatex
+
+% English thesis entry point.
+% Degree type: use master for a master's thesis and doctor for a doctoral dissertation.
+\documentclass[master,english]{uestcthesis}
+
+% Package used by the example structure table.
+\usepackage{multirow}
+
+% PDF document properties. Complete the formal cover in the Word template provided by UESTC.
+\hypersetup{
+    pdftitle={English Thesis Title},
+    pdfauthor={Author Name},
+    pdfcreator={UESTC Thesis LaTeX Template by Xovee Xu},
+}
+
+\begin{document}
+
+% cover.pdf should contain the cover, Chinese title page, and English title page, in that order.
+% Replace it with the PDF exported from the completed UESTC Word template.
+\uestcincludeexternalpdf{C}{-}{cover.pdf}
+
+% The provided declaration.pdf can be used directly.
+\uestcincludeexternalpdf{D}{1}{declaration.pdf}
+
+\uestcfrontmatter
+\input{chapters/abstract}
+
+% Comment out any part that is not needed.
+\uestctableofcontents
+\uestclistoffigures
+\uestclistoftables
+\input{chapters/symbols-english}
+\input{chapters/acronyms-english}
+
+\uestcmainmatter
+\input{chapters/chapter-1-english}
+
+\input{chapters/acknowledgements-english}
+
+\uestcprintbibliography
+
+\input{chapters/appendix-english}
+\input{chapters/achievements-english}
+
+\end{document}

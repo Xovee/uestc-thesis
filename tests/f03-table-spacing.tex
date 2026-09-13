@@ -1,0 +1,126 @@
+\ifdefined\FThreeEnglish\PassOptionsToClass{english}{uestcthesis}\fi
+\documentclass{uestcthesis}
+% Permanent F03 checks: actual PDF spacing, font sizes, and local restoration.
+\begin{document}
+\uestcmainmatter
+\chapter{Table spacing controls}
+
+BodyBeforeOne 中文正文第一行。\newline
+BodyBeforeTwo 中文正文第二行。
+\begin{table}[H]
+\centering
+\caption{Fixed width paragraph cells}
+\begin{tabular}{p{6cm}p{5cm}}
+\toprule
+Description & Value\\\midrule
+POne 中文第一行\newline
+PTwo 中文第二行\newline
+\textbf{PThree 中文第三行} & 1\\
+PShortOne & 2\\
+PShortTwo & 3\\
+\bottomrule
+\end{tabular}
+\tabnote{NoteOne 表格附注第一行。\newline NoteTwo 表格附注第二行。}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Flexible width paragraph cells}
+\begin{tabularx}{11cm}{Xr}
+\toprule
+Description & Value\\\midrule
+XOne 自适应列第一行\newline
+XTwo 自适应列第二行\newline
+XThree 自适应列第三行 & 1\\
+XShortOne & 2\\
+XShortTwo & 3\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+BodyAfterOne 中文正文第一行。\newline
+BodyAfterTwo 中文正文第二行。
+\clearpage
+\section{Other column types and explicit settings}
+\begin{tabular}{m{5cm}b{5cm}}
+\toprule
+MOne\newline MTwo\newline MThree & BOne\newline BTwo\newline BThree\\
+\bottomrule
+\end{tabular}
+\par\medskip
+{\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{5cm}p{5cm}}
+\toprule
+COne\newline CTwo\newline CThree & 1\\
+CShortOne & 2\\
+CShortTwo & 3\\
+\bottomrule
+\end{tabular}}
+\par\medskip
+\begin{tabularx}{11cm}{>{\normalsize}X>{\normalsize}r}
+\toprule
+NOne\newline NTwo\newline NThree & 1\\
+NShortOne & 2\\
+NShortTwo & 3\\
+\bottomrule
+\end{tabularx}
+\par\medskip
+\begin{tabular}{p{6cm}r}
+\toprule
+OuterOne\newline
+\begin{tabular}{p{4cm}}
+InnerOne\newline InnerTwo\newline InnerThree\\
+InnerShortOne\\InnerShortTwo
+\end{tabular}\newline
+OuterTwo\newline OuterThree & 1\\
+\bottomrule
+\end{tabular}
+\par\medskip
+
+BodyFinalOne\newline BodyFinalTwo
+
+\par\medskip
+\begin{tabular}{m{5cm}l}
+MSingle & LSingle\\
+\end{tabular}
+
+\clearpage
+\section{Isolation and natural line breaking}
+{\setstretch{1.5}
+StretchBeforeOne\newline StretchBeforeTwo
+\par\medskip
+\begin{tabular}{p{7cm}r}
+\toprule
+StretchOne\newline StretchTwo\newline StretchThree & 1\\
+StretchShortOne & 2\\StretchShortTwo & 3\\
+\bottomrule
+\end{tabular}
+\par\medskip
+StretchAfterOne\newline StretchAfterTwo
+\par}
+\medskip
+DefaultAfterOne\newline DefaultAfterTwo
+\par\medskip
+\begin{tabular*}{11cm}{p{7cm}@{\extracolsep{\fill}}r}
+\toprule
+StarOne\newline StarTwo\newline StarThree & 1\\
+StarShortOne & 2\\StarShortTwo & 3\\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular}{p{5cm}p{5cm}}
+\toprule
+自动换行的中文说明用于检查五号字和单倍行距。随着列宽变化，段落应自然换行，行间距和表格外正文分别控制。 &
+Natural wrapping checks whether an ordinary paragraph can retain the local table spacing while following its column width. Letters with ascenders and descenders remain legible.\\
+\bottomrule
+\end{tabular}
+\par\medskip
+\begin{tabular}{p{7cm}r}
+\toprule
+TallOne\(\displaystyle\frac{a+b+c}{d+e+f}\)\newline
+TallTwo\newline TallThree & 1\\
+\bottomrule
+\end{tabular}
+\par\medskip
+EndOne\newline EndTwo
+
+\end{document}

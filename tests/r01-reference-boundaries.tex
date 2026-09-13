@@ -1,0 +1,92 @@
+% Maintainer regression: short references retain semantics and cannot leak links into page furniture.
+\ifdefined\ROneEnglish\PassOptionsToClass{english}{uestcthesis}\fi
+\documentclass{uestcthesis}
+\newcommand*{\ROneText}[2]{\ifdefined\ROneEnglish#2\else#1\fi}
+\newsavebox{\ROneLinked}
+\newsavebox{\ROnePlain}
+\newcommand*{\ROneSameSize}[3]{%
+    \sbox{\ROneLinked}{#2}\sbox{\ROnePlain}{#3}%
+    \ifdim\wd\ROneLinked=\wd\ROnePlain\else
+        \PackageError{r01-test}{#1 changed width}{}\fi
+    \ifdim\ht\ROneLinked=\ht\ROnePlain\else
+        \PackageError{r01-test}{#1 changed height}{}\fi
+    \ifdim\dp\ROneLinked=\dp\ROnePlain\else
+        \PackageError{r01-test}{#1 changed depth}{}\fi
+}
+\newcommand*{\ROneBoundary}[2]{%
+    \clearpage
+    \null\vspace*{\dimexpr\textheight-\baselineskip-\topskip\relax}%
+    \noindent\makebox[\dimexpr\linewidth-15pt\relax][l]{R01-#1}%
+    \ifdefined\ROneEnglish\space\fi#2。\par
+    \noindent R01-END-#1\par
+}
+\begin{document}
+\uestcmainmatter
+\chapter{\ROneText{引用边界核验}{Reference boundary checks}}\label{r01:chapter}
+\section{\ROneText{真实编号目标}{Numbered targets}}\label{r01:section}
+\setcounter{equation}{9}
+\begin{equation}\label{r01:equation} E=mc^2 \end{equation}
+\setcounter{figure}{9}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.25\linewidth}
+        \centering\rule{30mm}{10mm}
+        \caption{}\label{r01:subfigure}
+    \end{subfigure}
+    \caption{\ROneText{图引用目标}{Figure reference target}}\label{r01:figure}
+\end{figure}
+\setcounter{table}{9}
+\begin{table}[H]
+    \centering
+    \caption{\ROneText{表引用目标}{Table reference target}}\label{r01:table}
+    \begin{tabular}{cc}\toprule A&B\\\midrule 1&2\\\bottomrule\end{tabular}
+\end{table}
+
+\clearpage
+\section{\ROneText{包含引用的标题}{References in a heading}: \ref{r01:figure}, \autoref{r01:table}}
+\noindent R01-NORMAL \ref{r01:figure}; \autoref{r01:table}; \eqref{r01:equation};
+\autoref{r01:chapter}; \autoref{r01:section}; \subref{r01:subfigure}.\par
+\noindent R01-STAR \ref*{r01:figure}; \autoref*{r01:table}; \pageref*{r01:figure};
+\subref*{r01:subfigure}. R01-STAR-END\par
+\noindent R01-MATH $A_{\ref{r01:figure}}+B^{\ref{r01:equation}}$.
+\ROneSameSize{ref}{\ref{r01:figure}}{\ref*{r01:figure}}
+\ROneSameSize{autoref}{\autoref{r01:figure}}{\autoref*{r01:figure}}
+\ROneSameSize{pageref}{\pageref{r01:figure}}{\pageref*{r01:figure}}
+\ROneSameSize{subref}{\subref{r01:subfigure}}{\subref*{r01:subfigure}}
+\ROneSameSize{math subscript}{$A_{\ref{r01:figure}}$}{$A_{\ref*{r01:figure}}$}
+\ROneSameSize{math superscript}{$B^{\ref{r01:equation}}$}{$B^{\ref*{r01:equation}}$}
+\ROneSameSize{equation}{$\displaystyle\ref{r01:equation}$}{$\displaystyle\ref*{r01:equation}$}
+\ROneSameSize{bare math}{$\ref{r01:figure}$}{$\ref*{r01:figure}$}
+\ROneSameSize{adjacent math}{$A+\ref{r01:figure}+B$}{$A+\ref*{r01:figure}+B$}
+\begin{figure}[H]
+    \centering\rule{20mm}{8mm}
+    \caption{\ROneText{图题中的引用}{A reference inside a caption}: \ref{r01:figure}}
+\end{figure}
+
+\ROneBoundary{REF}{图\ref{r01:figure}}
+\ROneBoundary{AUTOREF}{\autoref{r01:figure}}
+\ROneBoundary{PAGEREF}{第\pageref{r01:figure}}
+% An explicit break opportunity before inline math is required in the Chinese fixture.
+\ROneBoundary{BAREMATH}{\allowbreak$\ref{r01:figure}$}
+\ROneBoundary{REFSTAR}{图\ref*{r01:figure}}
+\ROneBoundary{AUTOSTAR}{\autoref*{r01:figure}}
+\ROneBoundary{PAGESTAR}{第\pageref*{r01:figure}}
+
+\clearpage
+\begin{table}[p]
+    \centering
+    \caption{R01-FLOAT-CITATION}\label{r01:float}
+    \begin{tabular}{cc}\toprule Control\cite{r01:control}&Result\\\midrule
+        \rule{0pt}{.55\textheight} A&B\\\bottomrule\end{tabular}
+\end{table}
+\null\vspace*{\dimexpr\textheight-\baselineskip-\topskip\relax}
+\noindent\makebox[\dimexpr\linewidth-15pt\relax][l]{R01-FLOAT}%
+\ifdefined\ROneEnglish\space\fi 图\ref{r01:figure}。\par
+\noindent R01-END-FLOAT\par
+\clearpage
+\begin{thebibliography}{1}
+    \bibitem{r01:control} Example Author. A synthetic boundary control. 2026.
+\end{thebibliography}
+\uestctableofcontents
+\uestclistoffigures
+\end{document}

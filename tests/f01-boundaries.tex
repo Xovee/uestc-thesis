@@ -1,0 +1,74 @@
+% F01 regression: real headings, one/four-digit and Roman page numbers.
+\ifdefined\FOneEnglish
+  \PassOptionsToClass{english}{uestcthesis}
+\fi
+\documentclass[tocdepth3]{uestcthesis}
+\begin{document}
+\uestcfrontmatter
+\setcounter{page}{38}
+\chapter*{Front matter width}
+\addcontentsline{toc}{chapter}{Front matter width}
+Roman page number XXXVIII is deliberately wider than a three-digit number.
+\uestctableofcontents
+\uestclistoffigures
+\uestclistoftables
+\uestcmainmatter
+\setcounter{chapter}{9}
+\chapter{Boundary evidence for stable page-number columns and long English chapter titles in the table of contents}
+\section{Short entry}
+\label{sec:f01-short}
+\noindent A short entry keeps its original typography.
+\clearpage
+\setcounter{page}{99}
+\setcounter{section}{9}
+\ifdefined\FOneEnglish
+  \section{Reliable analysis of complex models of robust academic systems of robots}
+  \subsection{A longer entry covering methods and applications of robust academic systems and reproducible experiments}
+  \subsubsection{A fourth-level entry covering methods and applications of robust academic systems and reproducible experiments}
+\else
+  \section{面向复杂系统的可靠分析方法及其在大规模学术系统中的应用与可重复实验研究}
+  \subsection{面向复杂系统的可靠分析方法及其在大规模学术系统中的应用与可重复实验研究}
+  \subsubsection{面向复杂系统的可靠分析方法及其在大规模学术系统中的应用与可重复实验研究}
+\fi
+\label{sec:f01-long}
+\noindent The long heading ends on this page.
+\clearpage
+\setcounter{page}{100}
+\begin{figure}[H]
+  \centering\fbox{\rule{0pt}{1cm}\rule{3cm}{0pt}}
+  \caption{Short figure caption}\label{fig:f01-short}
+\end{figure}
+\begin{table}[H]
+  \centering\caption{Short table caption}\label{tab:f01-short}
+  \begin{tabular}{cc}\toprule A & B \\\midrule 1 & 2 \\\bottomrule\end{tabular}
+\end{table}
+\clearpage
+\setcounter{page}{999}
+\section{Another short entry}
+\noindent A three-digit page number at its upper boundary.
+\clearpage
+\setcounter{page}{1000}
+\section{Four-digit boundary entry}
+\begin{figure}[H]
+  \centering\fbox{\rule{0pt}{1cm}\rule{3cm}{0pt}}
+  \ifdefined\FOneEnglish
+    \caption{Reliable analysis of complex models of robust academic systems of robots and reproducible experiments}
+  \else
+    \caption{面向复杂系统的可靠分析方法及其在大规模学术系统中的应用与可重复实验研究}
+  \fi
+  \label{fig:f01-long}
+\end{figure}
+\begin{table}[H]
+  \centering
+  \ifdefined\FOneEnglish
+    \caption{Reliable analysis of complex models of robust academic systems of robots and reproducible experiments}
+  \else
+    \caption{面向复杂系统的可靠分析方法及其在大规模学术系统中的应用与可重复实验研究}
+  \fi
+  \label{tab:f01-long}
+  \begin{tabular}{cc}\toprule A & B \\\midrule 1 & 2 \\\bottomrule\end{tabular}
+\end{table}
+\noindent References: \autoref{sec:f01-short}; \autoref{sec:f01-long};
+\autoref{fig:f01-short}; \autoref{fig:f01-long};
+\autoref{tab:f01-short}; \autoref{tab:f01-long}.
+\end{document}

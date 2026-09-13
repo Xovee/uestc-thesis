@@ -1,0 +1,9 @@
+% Maintainer-only bibliography pagination regression test.
+% Inspect the actual first and last lines of entry 29 in the generated PDF.
+\documentclass{uestcthesis}
+
+\begin{document}
+\uestcmainmatter
+\nocite{*}
+\uestcprintbibliography[tests/bibliography-pagination]
+\end{document}

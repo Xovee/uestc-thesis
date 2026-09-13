@@ -1,0 +1,22 @@
+name: 功能建议
+description: 建议新的学位类型、配置项、文档或工程能力
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    attributes:
+      label: 使用场景
+      description: 这个功能解决什么问题，哪些用户会用到？
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 规范依据
+      description: 如果涉及学校格式，请提供规范名称、条目和公开链接
+  - type: textarea
+    attributes:
+      label: 建议方案
+      description: 描述期望的接口或行为，以及可能的替代方案
+    validations:
+      required: true

@@ -1,0 +1,46 @@
+% !TeX program = xelatex
+
+% 中文论文入口。
+% 学位类型：硕士使用master，博士使用doctor；默认为master。
+\documentclass[master,chinese]{uestcthesis}
+
+% 加载示例表格所需的宏包。
+\usepackage{multirow}  % 表格单元格纵向合并
+
+% PDF文档属性；正式封面中的论文信息仍需在学校提供的Word模板中填写。
+\hypersetup{
+    pdftitle={论文题目},
+    pdfauthor={作者姓名},
+    pdfcreator={UESTC Thesis LaTeX Template by Xovee Xu},
+}
+
+\begin{document}
+
+% 封面PDF应依次包含封面、中文扉页和英文扉页。
+% 正式使用时，请用本人填写并导出的PDF覆盖cover.pdf。
+\uestcincludeexternalpdf{C}{-}{cover.pdf}
+
+% 项目提供的declaration.pdf可直接使用。
+\uestcincludeexternalpdf{D}{1}{declaration.pdf}
+
+\uestcfrontmatter
+\input{chapters/abstract}  % 摘要
+
+% 不需要的内容可直接注释对应命令。
+\uestctableofcontents  % 目录
+\uestclistoffigures  % 图目录
+\uestclistoftables  % 表目录
+\input{chapters/symbols}  % 主要符号表
+\input{chapters/acronyms}  % 缩略词表
+
+\uestcmainmatter
+\input{chapters/chapter-1}  % 第一章
+
+\input{chapters/acknowledgements}  % 致谢
+
+\uestcprintbibliography  % 参考文献
+
+\input{chapters/appendix}  % 附录
+\input{chapters/achievements}  % 攻读硕士/博士学位期间取得的成果
+
+\end{document}

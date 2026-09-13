@@ -1,0 +1,15 @@
+* text=auto
+
+*.bib text eol=lf
+*.cls text eol=lf
+*.lua text eol=lf
+*.md text eol=lf
+*.tex text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.png binary

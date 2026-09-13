@@ -1,0 +1,74 @@
+% Maintainer-only appendix numbering regression test.
+% The same fixture is reused by appendix-numbering-english.tex.
+\documentclass{uestcthesis}
+
+\newcommand{\AssertExpandedValue}[3]{%
+  \begingroup
+  \edef\actualvalue{#2}%
+  \def\expectedvalue{#3}%
+  \ifx\actualvalue\expectedvalue
+  \else
+    \PackageError{appendix-numbering-test}
+      {#1: expected '#3', got '\actualvalue'}
+      {Appendix counters must use the appendix letter.}%
+  \fi
+  \endgroup
+}
+
+\begin{document}
+
+\uestcmainmatter
+
+\chapter{Main Matter Placeholder}
+\section{Main-Matter Section}
+\AssertExpandedValue{Main-matter section}{\thesection}{1.1}
+\begin{equation}
+  x+y=z.
+\end{equation}
+\AssertExpandedValue{Main-matter equation}{\theequation}{1-1}
+
+\uestcappendix
+
+\chapter{First Appendix}
+\section{First Section}
+\AssertExpandedValue{Appendix A section}{\thesection}{A.1}
+\subsection{First Subsection}
+\AssertExpandedValue{Appendix A subsection}{\thesubsection}{A.1.1}
+\subsubsection{First Fourth-Level Heading}
+\AssertExpandedValue{Appendix A fourth-level heading}{\thesubsubsection}{A.1.1.1}
+
+\begin{equation}
+  E=mc^2.
+\end{equation}
+\AssertExpandedValue{Appendix A equation}{\theequation}{A-1}
+
+\begin{figure}[htbp]
+  \centering
+  \rule{3cm}{1cm}
+  \caption{Appendix Figure}
+  \AssertExpandedValue{Appendix A figure}{\thefigure}{A-1}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Appendix Table}
+  \AssertExpandedValue{Appendix A table}{\thetable}{A-1}
+  \begin{tabular}{cc}
+    \toprule
+    Item & Value \\
+    \midrule
+    Example & 1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\chapter{Second Appendix}
+\section{First Section}
+\AssertExpandedValue{Appendix B section}{\thesection}{B.1}
+
+\begin{equation}
+  a^2+b^2=c^2.
+\end{equation}
+\AssertExpandedValue{Appendix B equation}{\theequation}{B-1}
+
+\end{document}

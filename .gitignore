@@ -1,0 +1,72 @@
+# Build directories
+/build/
+/dist/
+/output/
+/tmp/
+
+# Generated documents at repository root
+/main.pdf
+/smoke.pdf
+/uestcthesis-doc.pdf
+
+# Only the six specifically approved font files may be committed.
+/fonts/*.ttf
+/fonts/*.ttc
+/fonts/*.otf
+!/fonts/simsun.ttc
+!/fonts/simhei.ttf
+!/fonts/times.ttf
+!/fonts/timesbd.ttf
+!/fonts/timesi.ttf
+!/fonts/timesbi.ttf
+
+# LaTeX auxiliary files
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glo
+*.gls
+*.glg
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+*~
+.idea/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Deferred publication
+/THIRD_PARTY.md
+
+# Historical guide experiments
+/guide.tex
+/docs/guide/
+/docs/user-guide-draft.md
+
+# Local-only overrides
+latexmk.localrc
