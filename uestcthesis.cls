@@ -14,7 +14,7 @@
 %% The work consists of the files described in NOTICE.md.
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uestcthesis}[2026/09/13 v1.0.1 UESTC Thesis Class by Xovee Xu]
+\ProvidesClass{uestcthesis}[2026/09/14 v1.0.2 UESTC Thesis Class by Xovee Xu]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,6 +36,8 @@
 
 
 % 引入packages
+% 正文字体不接管传统数学字母表，避免粗体希腊字母的编码错配。
+\PassOptionsToPackage{no-math}{fontspec}
 \RequirePackage[
     PunctStyle=quanjiao,                % 全角中文标点符号
     CJKmath=true,                       % 在公式中使用中文

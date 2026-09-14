@@ -1,0 +1,40 @@
+% Standard math commands must retain valid glyphs with the thesis text fonts.
+\ifdefined\FSixEnglish\PassOptionsToClass{english}{uestcthesis}\fi
+\documentclass{uestcthesis}
+\begin{document}
+\uestcmainmatter
+\chapter{Math font checks}
+\noindent TextControl ABCxyz0123 中文正文。\par
+\noindent\textbf{BoldControl ABCxyz0123}\par
+\[
+ ABCxyz0123\quad\mathrm{ABCxyz0123}\quad\mathbf{ABCxyz0123}
+\]
+\[
+ \mathit{ABCxyz0123}\quad\mathsf{ABCxyz0123}\quad\mathtt{ABCxyz0123}
+\]
+\[
+ \Gamma\Delta\Theta\Lambda\Xi\Pi\Sigma\Upsilon\Phi\Psi\Omega
+\]
+\[
+ \mathbf{\Gamma\Delta\Theta\Lambda\Xi\Pi\Sigma\Upsilon\Phi\Psi\Omega}
+\]
+\[
+ \boldsymbol{\Gamma\Delta\Theta\Lambda\Xi\Pi\Sigma\Upsilon\Phi\Psi\Omega}
+\]
+\[
+ \alpha\beta\gamma\theta\phi\omega\quad
+ \boldsymbol{\alpha\beta\gamma\theta\phi\omega}
+\]
+\[
+ \log x+\sin\theta+\lim_{n\to\infty}\frac1n\sum_{i=1}^n x_i
+ +\int_0^1 x^2\,\mathrm{d}x
+\]
+\[
+ \mathbf{A}=\begin{bmatrix}1&\mathbf{\Sigma}\\\mathbf{\Gamma}&0\end{bmatrix},
+ \qquad f(x)=\begin{cases}x^2&x>0\\0&x\leq0\end{cases}
+\]
+\[
+ \text{损失}=\mathbb{E}_{x\sim\mathcal D}
+ [\lVert\mathbf{x}-\boldsymbol{\mu}\rVert^2]
+\]
+\end{document}

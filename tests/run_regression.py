@@ -27,6 +27,8 @@ class LatexCase:
 
 
 CASES = (
+    LatexCase("f06-math-fonts", "tests/f06-math-fonts.tex", quick=True),
+    LatexCase("f06-math-fonts-english", "tests/f06-math-fonts-english.tex", quick=True),
     LatexCase("r01-reference-boundaries", "tests/r01-reference-boundaries.tex", quick=True),
     LatexCase("r01-reference-boundaries-english", "tests/r01-reference-boundaries-english.tex", quick=True),
     LatexCase("f05-editions", "tests/f05-editions.tex", quick=True),
@@ -176,6 +178,9 @@ def main() -> int:
         for case in selected_cases:
             compile_case(case, build_dir)
         for case in selected_cases:
+            if case.jobname.startswith("f06-math-fonts"):
+                run([sys.executable, "tests/assert_math_fonts.py",
+                     str(build_dir / f"{case.jobname}.pdf")])
             if case.jobname.startswith("r01-reference-boundaries"):
                 run([sys.executable, "tests/assert_reference_boundaries.py",
                      str(build_dir / f"{case.jobname}.pdf")])

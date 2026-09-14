@@ -18,12 +18,12 @@
 
 ## 下载模板
 
-**当前版本：1.0.1。** 按论文语言下载模板，或查看[发布说明](https://github.com/Xovee/uestc-thesis/releases/tag/v1.0.1)。
+**当前版本：1.0.2。** 按论文语言下载模板，或查看[发布说明](https://github.com/Xovee/uestc-thesis/releases/tag/v1.0.2)。
 
 | 中文学位论文 | English Thesis |
 | :---: | :---: |
-| [下载中文模板 ZIP](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.1/uestc-thesis-xovee-chinese.zip) | [下载英文模板 ZIP](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.1/uestc-thesis-xovee-english.zip) |
-| [Open in Overleaf](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.1%2Fuestc-thesis-xovee-chinese.zip) | [Open in Overleaf](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.1%2Fuestc-thesis-xovee-english.zip) |
+| [下载中文模板 ZIP](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.2/uestc-thesis-xovee-chinese.zip) | [下载英文模板 ZIP](https://github.com/Xovee/uestc-thesis/releases/download/v1.0.2/uestc-thesis-xovee-english.zip) |
+| [Open in Overleaf](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.2%2Fuestc-thesis-xovee-chinese.zip) | [Open in Overleaf](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FXovee%2Fuestc-thesis%2Freleases%2Fdownload%2Fv1.0.2%2Fuestc-thesis-xovee-english.zip) |
 | [查看示例 PDF](docs/previews/chinese.pdf) · [阅读指南](GUIDE.md) | [Sample PDF](docs/previews/english.pdf) · [User guide](GUIDE-english.md) |
 
 每个包只有一个 `main.tex` 入口，正文示例和语言已配好，同时保留中英文摘要。
