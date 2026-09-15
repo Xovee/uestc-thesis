@@ -98,8 +98,9 @@ PDF结构断言检查中英文示例的A4页面、外部封面与声明页标签
 
 ```text
 python -m pip install -r tests/requirements.txt
-python tests/assert_pdf_structure.py output/main.pdf
-python tests/assert_pdf_structure.py output/pdf/uestc-thesis-english-preview.pdf --language english
+# 以下路径对应统一回归入口的默认输出；使用--build-dir时同步替换目录。
+python tests/assert_pdf_structure.py build/regression/uestc-thesis-template-preview.pdf
+python tests/assert_pdf_structure.py build/regression/full-example-english.pdf --language english
 ```
 
 外部PDF断言独立检查默认`cover.pdf`和`declaration.pdf`的文件哈希、页数、A4尺寸、
@@ -137,7 +138,7 @@ python tests/run_regression.py --tex-bin C:/texlive/2026/bin/windows --build-dir
 ```
 
 省略`--tex-bin`时使用当前PATH；指定时仅影响本次进程。不同版本必须使用不同输出
-目录。每次完整运行编译32份文档；`--quick`也包含版式尺寸测试、F01最小例、中英文F02字号、F03表内行距与F04子图测试。
+目录。编译文档数量以当前回归入口的用例列表和运行摘要为准；历史数量仅作为对应版本的验证记录。`--quick`也包含版式尺寸测试、F01最小例、中英文F02字号、F03表内行距与F04子图测试。
 输出目录中的`environment.json`记录工具路径、版本及主示例加载的宏包版本，
 `layout-contract.layout.json`记录实际PDF尺寸与断言结果。
 

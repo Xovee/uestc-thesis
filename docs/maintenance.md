@@ -18,11 +18,13 @@
 
 开发与验收采用TeX Live 2026，不持续维护旧版本兼容性。已在Windows + TeX Live 2026、macOS + MacTeX 2026及Overleaf（XeLaTeX + TeX Live 2026）完成示例与真实博士论文编译测试。独立Linux本地环境及GitHub Actions尚未验证；仓库目前没有自动构建工作流。
 
+后续新版本的一般调整和优化只需验证一个平台，默认使用当前可用的Windows / TeX Live 2026环境；不因版本号变化重复要求跨平台验收。重大调整或涉及平台差异的字体、路径、编译工具链变更，再按实际影响扩大验证范围。记录本次验证的平台与版本，不将历史验证表述为本版本已复验；单平台验收仍须完成适用的回归和PDF检查。
+
 学校规范优先于实现约定。跨版本的断行或分页差异需结合具体版面判断，不以页数完全一致作为验收标准。中西文自动间距采用`CJKecglue={\hskip .25em plus .1em minus .1em}`、`xCJKecglue=false`和`CJKspace=false`；这些是模板实现选择，不是学校规定的数值。改变字体、字号、行距或其他排版行为时，检查修改前后的实际PDF。
 
 ## 测试
 
-从仓库根目录运行，需要Python 3.10或更新版本、TeX Live 2026以及可用的Poppler命令：
+按[贡献指南](../CONTRIBUTING.md)选择与改动范围匹配的检查，以下是可用命令，不要求每次修改全部执行。从仓库根目录运行；Python检查需要Python 3.10或更新版本及对应依赖，排版回归另需TeX Live 2026及可用的Poppler命令。依赖已满足时无需重复安装：
 
 ```text
 python -m pip install -r tests/requirements.txt
@@ -62,13 +64,13 @@ python tools/package_release.py --language chinese
 python tools/package_release.py --language english
 ```
 
-工具在干净目录中从当前源码编译，生成每种语言的`-candidate.zip`、`-candidate.example.pdf`及`-candidate.review.json`。不使用外部旧示例PDF。检查内容、图片、全部PDF页面，以及README、NOTICE和发布说明的非官方表述后，仅将审阅记录中`review`下的`content_and_images`、`all_pdf_pages`、`non_official_wording`三项设为`true`，保留其他数据。
+工具在干净目录中从当前源码编译，生成每种语言的`-candidate.zip`、`-candidate.example.pdf`及`-candidate.review.json`。不使用外部旧示例PDF。用户授权准备发布包后，代理应继续完成候选构建、全部PDF页面检查、内容和图片检查，以及README、NOTICE和发布说明的非官方表述检查，修复已发现的问题，并整理与候选哈希绑定的审阅结果。代理检查不等同于维护者对人名、签名、未公开研究内容及分发资格的人工确认；需要该确认时，应先完成其余工作，再一次性提交具体候选和待确认事项。三项审阅条件均有真实依据且所需人工确认已取得后，仅将审阅记录中`review`下的`content_and_images`、`all_pdf_pages`、`non_official_wording`三项设为`true`，保留其他数据，再运行以下命令。
 
 ```text
 python tools/package_release.py --reviewed dist/uestc-thesis-xovee-chinese-candidate.review.json
 python tools/package_release.py --reviewed dist/uestc-thesis-xovee-english-candidate.review.json
 ```
 
-确认后生成正式ZIP及旁置的`.manifest.json`。源码、候选、预览或检查数据变化后，旧审阅失效，须重新准备和复核。打包工具检查文件名单、哈希、可识别的隐私线索及PDF结构和交互对象；人名、签名图像和未公开研究内容仍须人工判断。审阅记录和本地历史档案不收入用户包。
+生成正式ZIP及旁置的`.manifest.json`。源码、候选、预览或检查数据变化后，旧审阅失效，须重新准备和复核。打包工具检查文件名单、哈希、可识别的隐私线索及PDF结构和交互对象；人名、签名图像和未公开研究内容仍须人工判断。审阅记录和本地历史档案不收入用户包。
 
-发布说明应列出版本变化及验证环境；源码、指南和示例PDF必须对应同一版本。这里只描述准备流程，执行打包不等于已经创建GitHub Release。
+发布说明应列出版本变化及验证环境；源码、指南和示例PDF必须对应同一版本。这里只描述准备流程，执行打包不等于已经创建GitHub Release；创建GitHub Release仍需对应授权。
